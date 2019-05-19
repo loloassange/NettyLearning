@@ -2,7 +2,6 @@ package com.example.netty_learning.chapter19_MessangeSendAndRecive.client.consol
 
 import com.example.netty_learning.chapter19_MessangeSendAndRecive.protocol.request.QuitGroupRequestPacket;
 import io.netty.channel.Channel;
-
 import java.util.Scanner;
 
 public class QuitGroupConsoleCommand implements ConsoleCommand {

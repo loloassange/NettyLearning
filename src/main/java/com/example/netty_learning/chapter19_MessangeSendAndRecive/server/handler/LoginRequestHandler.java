@@ -5,12 +5,23 @@ import com.example.netty_learning.chapter19_MessangeSendAndRecive.protocol.respo
 import com.example.netty_learning.chapter19_MessangeSendAndRecive.session.Session;
 import com.example.netty_learning.chapter19_MessangeSendAndRecive.util.IDUtil;
 import com.example.netty_learning.chapter19_MessangeSendAndRecive.util.SessionUtil;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
-
 import java.util.Date;
 
+/**
+ *
+ * 如果一个 handler 要被多个 channel 进行共享，必须要加上 @ChannelHandler.Sharable 显示地告诉 Netty，
+ * 这个 handler 是支持多个 channel 共享的，否则会报错。
+ */
+@ChannelHandler.Sharable
 public class LoginRequestHandler extends SimpleChannelInboundHandler<LoginRequestPacket> {
+
+    public static final LoginRequestHandler INSTANCE = new LoginRequestHandler();
+
+    protected LoginRequestHandler() {
+    }
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, LoginRequestPacket loginRequestPacket) {
@@ -31,7 +42,7 @@ public class LoginRequestHandler extends SimpleChannelInboundHandler<LoginReques
         }
 
         // 登录响应
-        ctx.channel().writeAndFlush(loginResponsePacket);
+        ctx.writeAndFlush(loginResponsePacket);
     }
 
     private boolean valid(LoginRequestPacket loginRequestPacket) {

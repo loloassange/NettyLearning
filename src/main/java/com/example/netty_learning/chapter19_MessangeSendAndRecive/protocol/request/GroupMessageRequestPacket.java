@@ -5,7 +5,6 @@ import com.example.netty_learning.chapter19_MessangeSendAndRecive.protocol.Packe
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @Data
 @NoArgsConstructor
 public class GroupMessageRequestPacket extends Packet {

@@ -2,14 +2,12 @@ package com.example.netty_learning.chapter19_MessangeSendAndRecive.client.consol
 
 import com.example.netty_learning.chapter19_MessangeSendAndRecive.protocol.request.LoginRequestPacket;
 import io.netty.channel.Channel;
-
 import java.util.Scanner;
 
 public class LoginConsoleCommand implements ConsoleCommand {
 
     @Override
     public void exec(Scanner scanner, Channel channel) {
-
         LoginRequestPacket loginRequestPacket = new LoginRequestPacket();
 
         System.out.print("输入用户名登录: ");
@@ -18,7 +16,6 @@ public class LoginConsoleCommand implements ConsoleCommand {
 
         // 发送登录数据包
         channel.writeAndFlush(loginRequestPacket);
-
         waitForLoginResponse();
     }
 

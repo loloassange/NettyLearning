@@ -1,6 +1,5 @@
 package com.example.netty_learning.chapter19_MessangeSendAndRecive.util;
 
-
 import com.example.netty_learning.chapter19_MessangeSendAndRecive.Constent;
 import com.example.netty_learning.chapter19_MessangeSendAndRecive.session.Session;
 import io.netty.channel.Channel;

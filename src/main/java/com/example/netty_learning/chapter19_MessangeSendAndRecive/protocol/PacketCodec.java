@@ -6,7 +6,6 @@ import com.example.netty_learning.chapter19_MessangeSendAndRecive.protocol.respo
 import com.example.netty_learning.chapter19_MessangeSendAndRecive.serialize.Serializer;
 import com.example.netty_learning.chapter19_MessangeSendAndRecive.serialize.impl.JSONSerializer;
 import io.netty.buffer.ByteBuf;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -35,6 +34,8 @@ public class PacketCodec {
         packetTypeMap.put(Constent.QUIT_GROUP_RESPONSE, QuitGroupResponsePacket.class);
         packetTypeMap.put(Constent.LIST_GROUP_MEMBERS_REQUEST, ListGroupMembersRequestPacket.class);
         packetTypeMap.put(Constent.LIST_GROUP_MEMBERS_RESPONSE, ListGroupMembersResponsePacket.class);
+        packetTypeMap.put(Constent.GROUP_MESSAGE_REQUEST, GroupMessageRequestPacket.class);
+        packetTypeMap.put(Constent.GROUP_MESSAGE_RESPONSE, GroupMessageResponsePacket.class);
 
         serializerMap = new HashMap<>();
         Serializer serializer = new JSONSerializer();
@@ -42,6 +43,7 @@ public class PacketCodec {
     }
 
     public void encode(ByteBuf byteBuf, Packet packet) {
+
         // 1. 序列化 java 对象
         byte[] bytes = Serializer.DEFAULT.serialize(packet);
 
@@ -56,6 +58,7 @@ public class PacketCodec {
 
 
     public Packet decode(ByteBuf byteBuf) {
+
         // 跳过 magic number
         byteBuf.skipBytes(4);
 
@@ -93,4 +96,5 @@ public class PacketCodec {
 
         return packetTypeMap.get(command);
     }
+
 }

@@ -5,6 +5,7 @@ import com.example.netty_learning.chapter19_MessangeSendAndRecive.protocol.Packe
 import com.example.netty_learning.chapter19_MessangeSendAndRecive.session.Session;
 import lombok.Data;
 
+
 @Data
 public class GroupMessageResponsePacket extends Packet {
 

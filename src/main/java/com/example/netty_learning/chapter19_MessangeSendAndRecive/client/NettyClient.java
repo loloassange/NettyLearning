@@ -15,11 +15,13 @@ import io.netty.channel.ChannelOption;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
-
 import java.util.Date;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author 闪电侠
+ */
 public class NettyClient {
 
     private static final int MAX_RETRY = 5;
@@ -55,6 +57,8 @@ public class NettyClient {
                         ch.pipeline().addLast(new QuitGroupResponseHandler());
                         // 获取群成员响应处理器
                         ch.pipeline().addLast(new ListGroupMembersResponseHandler());
+                        // 群消息响应
+                        ch.pipeline().addLast(new GroupMessageResponseHandler());
                         // 登出响应处理器
                         ch.pipeline().addLast(new LogoutResponseHandler());
                         ch.pipeline().addLast(new PacketEncoder());
@@ -85,7 +89,6 @@ public class NettyClient {
     }
 
     private static void startConsoleThread(Channel channel) {
-
         ConsoleCommandManager consoleCommandManager = new ConsoleCommandManager();
         LoginConsoleCommand loginConsoleCommand = new LoginConsoleCommand();
         Scanner scanner = new Scanner(System.in);
@@ -100,5 +103,4 @@ public class NettyClient {
             }
         }).start();
     }
-
 }
