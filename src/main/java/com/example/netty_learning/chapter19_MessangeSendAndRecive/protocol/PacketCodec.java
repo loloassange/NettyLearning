@@ -1,11 +1,12 @@
-package com.example.netty_learning.chapter18_MemberManagement.protocol;
+package com.example.netty_learning.chapter19_MessangeSendAndRecive.protocol;
 
-import com.example.netty_learning.chapter18_MemberManagement.Constent;
-import com.example.netty_learning.chapter18_MemberManagement.protocol.request.*;
-import com.example.netty_learning.chapter18_MemberManagement.protocol.response.*;
-import com.example.netty_learning.chapter18_MemberManagement.serialize.Serializer;
-import com.example.netty_learning.chapter18_MemberManagement.serialize.impl.JSONSerializer;
+import com.example.netty_learning.chapter19_MessangeSendAndRecive.Constent;
+import com.example.netty_learning.chapter19_MessangeSendAndRecive.protocol.request.*;
+import com.example.netty_learning.chapter19_MessangeSendAndRecive.protocol.response.*;
+import com.example.netty_learning.chapter19_MessangeSendAndRecive.serialize.Serializer;
+import com.example.netty_learning.chapter19_MessangeSendAndRecive.serialize.impl.JSONSerializer;
 import io.netty.buffer.ByteBuf;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,7 +20,6 @@ public class PacketCodec {
 
 
     private PacketCodec() {
-
         packetTypeMap = new HashMap<>();
         packetTypeMap.put(Constent.LOGIN_REQUEST, LoginRequestPacket.class);
         packetTypeMap.put(Constent.LOGIN_RESPONSE, LoginResponsePacket.class);

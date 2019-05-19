@@ -1,12 +1,12 @@
-package com.example.netty_learning.chapter18_MemberManagement.client;
+package com.example.netty_learning.chapter19_MessangeSendAndRecive.client;
 
-import com.example.netty_learning.chapter18_MemberManagement.client.console.ConsoleCommandManager;
-import com.example.netty_learning.chapter18_MemberManagement.client.console.LoginConsoleCommand;
-import com.example.netty_learning.chapter18_MemberManagement.client.handler.*;
-import com.example.netty_learning.chapter18_MemberManagement.codec.PacketDecoder;
-import com.example.netty_learning.chapter18_MemberManagement.codec.PacketEncoder;
-import com.example.netty_learning.chapter18_MemberManagement.codec.Spliter;
-import com.example.netty_learning.chapter18_MemberManagement.util.SessionUtil;
+import com.example.netty_learning.chapter19_MessangeSendAndRecive.client.console.ConsoleCommandManager;
+import com.example.netty_learning.chapter19_MessangeSendAndRecive.client.console.LoginConsoleCommand;
+import com.example.netty_learning.chapter19_MessangeSendAndRecive.client.handler.*;
+import com.example.netty_learning.chapter19_MessangeSendAndRecive.codec.PacketDecoder;
+import com.example.netty_learning.chapter19_MessangeSendAndRecive.codec.PacketEncoder;
+import com.example.netty_learning.chapter19_MessangeSendAndRecive.codec.Spliter;
+import com.example.netty_learning.chapter19_MessangeSendAndRecive.util.SessionUtil;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
@@ -15,6 +15,7 @@ import io.netty.channel.ChannelOption;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
+
 import java.util.Date;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;

@@ -1,6 +1,6 @@
-package com.example.netty_learning.chapter18_MemberManagement.client.handler;
+package com.example.netty_learning.chapter19_MessangeSendAndRecive.client.handler;
 
-import com.example.netty_learning.chapter18_MemberManagement.protocol.response.QuitGroupResponsePacket;
+import com.example.netty_learning.chapter19_MessangeSendAndRecive.protocol.response.QuitGroupResponsePacket;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 

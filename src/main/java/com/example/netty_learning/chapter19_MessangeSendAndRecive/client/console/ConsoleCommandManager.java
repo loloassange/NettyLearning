@@ -1,6 +1,6 @@
-package com.example.netty_learning.chapter18_MemberManagement.client.console;
+package com.example.netty_learning.chapter19_MessangeSendAndRecive.client.console;
 
-import com.example.netty_learning.chapter18_MemberManagement.util.SessionUtil;
+import com.example.netty_learning.chapter19_MessangeSendAndRecive.util.SessionUtil;
 import io.netty.channel.Channel;
 
 import java.util.HashMap;

@@ -1,8 +1,8 @@
-package com.example.netty_learning.chapter18_MemberManagement.server.handler;
+package com.example.netty_learning.chapter19_MessangeSendAndRecive.server.handler;
 
-import com.example.netty_learning.chapter18_MemberManagement.protocol.request.JoinGroupRequestPacket;
-import com.example.netty_learning.chapter18_MemberManagement.protocol.response.JoinGroupResponsePacket;
-import com.example.netty_learning.chapter18_MemberManagement.util.SessionUtil;
+import com.example.netty_learning.chapter19_MessangeSendAndRecive.protocol.request.JoinGroupRequestPacket;
+import com.example.netty_learning.chapter19_MessangeSendAndRecive.protocol.response.JoinGroupResponsePacket;
+import com.example.netty_learning.chapter19_MessangeSendAndRecive.util.SessionUtil;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.channel.group.ChannelGroup;

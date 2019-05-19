@@ -1,7 +1,8 @@
-package com.example.netty_learning.chapter18_MemberManagement.client.console;
+package com.example.netty_learning.chapter19_MessangeSendAndRecive.client.console;
 
-import com.example.netty_learning.chapter18_MemberManagement.protocol.request.LoginRequestPacket;
+import com.example.netty_learning.chapter19_MessangeSendAndRecive.protocol.request.LoginRequestPacket;
 import io.netty.channel.Channel;
+
 import java.util.Scanner;
 
 public class LoginConsoleCommand implements ConsoleCommand {

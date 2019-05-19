@@ -1,7 +1,8 @@
-package com.example.netty_learning.chapter18_MemberManagement.client.console;
+package com.example.netty_learning.chapter19_MessangeSendAndRecive.client.console;
 
-import com.example.netty_learning.chapter18_MemberManagement.protocol.request.JoinGroupRequestPacket;
+import com.example.netty_learning.chapter19_MessangeSendAndRecive.protocol.request.JoinGroupRequestPacket;
 import io.netty.channel.Channel;
+
 import java.util.Scanner;
 
 public class JoinGroupConsoleCommand implements ConsoleCommand {
